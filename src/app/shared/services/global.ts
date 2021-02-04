@@ -10,8 +10,8 @@
     appUrl: 'http://localhost:4200/'
     
 
-    //Online URLs - JBS New Server
-    //  serverUrl: 'http://208.113.131.185:8000/',
-    //  appUrl: 'http://208.113.131.185:4200/'
+    //Online URLs - IMS
+    //  serverUrl: 'http://208.113.131.185:4444/',
+    //  appUrl: 'http://208.113.131.185:1234/'
     
  });
