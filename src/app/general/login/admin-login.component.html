@@ -1,0 +1,66 @@
+<div class="form-page-background employee-login">
+    <div class="loading-overlay" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+        <!-- <i class="fa fa-times-circle"></i> -->
+    </div>
+    <div class="d-flex flex-column m-auto h-100">
+    <div class="row align-items-center mt-auto">
+        <div class="col-md-12">
+            <div class="form-header-logo-title">
+                <img src="assets/images/JBSolutions_Logo.png" height="100px" width="100px" class="form-logo-title img-responsive" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mb-auto">
+        <div class="col-lg-4 col-md-8 col-sm-10 push-lg-4 push-md-2 push-sm-1">
+            <form role="form" [formGroup]="loginForm" (submit)="AdminLogin()">
+                <div class="form-content">
+                    <div class="row" *ngIf="isError">
+                        <div class="col-md-12">
+                            <div class="text-center text-danger font-italic">{{errorMessage}}.</div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                           <mat-form-field>
+                                <input matInput placeholder="Username :" [(ngModel)]="loginModel.username" formControlName="username">
+                                <mat-error [labelName]="'Username'" [control]="loginForm.controls.username"></mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                           <mat-form-field>
+                                <input matInput type="password" placeholder="Password :" [(ngModel)]="loginModel.password" formControlName="password">
+                                <mat-error [labelName]="'Password'" [control]="loginForm.controls.password"></mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>                  
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button mat-raised-button class="mat-btn-full mt-1 mb-2" color="basic" type="submit" [disabled]="!loginForm.valid">Log In</button>
+                        </div>
+                    </div>                    
+                    
+                    <!-- <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center text-grey-light mt-2 mb-3">
+                                <h6>Don't have an account?</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a mat-raised-button class="mat-btn-full mt-1 mb-4" color="primary" [routerLink]="['/general/employee-signup']">Create an Account</a>
+                        </div>
+                    </div> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,69 @@
+// shared css for the login and employee signup page
+.employee-login {
+	.form-header-logo-title {
+		text-align: center;
+	}
+	.form-logo-title {
+		margin-bottom: 50px;
+	}
+	.form-control {
+		border-left: 1px solid rgba(255,255,255,.15);
+		border-radius: 0;
+		padding-left: 15px;
+	}
+}
+
+.employee-login-icon {
+	width: 80px;
+	height: 80px;
+	border: 3px solid #ffffff;
+	text-align: center;
+	font-size: 40px;
+	line-height: 72px;
+	border-radius: 100px;
+	display: inline-block;
+}
+
+.mat-form-field-label, .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: rgba(255,255,255,1.0) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.mat-form-field {
+    display: block !important;
+}
+
+.mat-raised-button {
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+	.form-group-bg label {
+		display: none;
+	}
+	.form-control {
+		border-left: 0px solid rgba(255,255,255,.15) !important;
+		padding-left: 0px !important;
+	}
+}
+
+@keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
+}
+
+@-webkit-keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
+}

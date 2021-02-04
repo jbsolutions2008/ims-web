@@ -1,0 +1,82 @@
+<app-admin-header></app-admin-header>
+<app-admin-sidebar></app-admin-sidebar>
+<!-- <div class="overlay-loading d-flex justify-content-center" *ngIf="showSpinner">
+    <mat-spinner></mat-spinner>
+</div> -->
+
+<div class="loading-overlay" *ngIf="loading">
+    <mat-spinner></mat-spinner>    
+</div>
+<section class="main-container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/admin/dashboard" [routerLinkActive]="['router-link-active']">Admin Home</a></li>         
+        <li class="breadcrumb-item"><a [routerLink]="['/admin/manage-product-list']" [routerLinkActive]="['router-link-active']">Manage Product List</a></li>         
+        <li class="breadcrumb-item active">Add/Edit Product</li> 
+    </ol>
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="text-muted">Add/Edit Product</h2>
+        </div>        
+    </div>
+    
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p *ngIf="msg" class="text-center text-success font-italic">{{msg}}</p>
+        </div>
+    </div>
+    <!-- Material Form Section Start -->
+    <form role="form" [formGroup]="ProductList" novalidate (submit)="updateProductDetails()">        
+    <div class="row ">
+        <div class="col-md-6">
+            <mat-form-field>
+                <input readonly matInput placeholder="Product Unique ID" [(ngModel)]="ManageProduct.prouniqueid" formControlName="prouniqueid">
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput placeholder="Name" [(ngModel)]="ManageProduct.name" formControlName="name">
+                <mat-error [labelName]="'Name'" [isSubmitButtonClicked]="isSubmitButtonClicked" [control]="ProductList.controls.name"></mat-error>
+            </mat-form-field>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput placeholder="Price" [(ngModel)]="ManageProduct.price" formControlName="price">
+                <mat-error [labelName]="'Price'" [isSubmitButtonClicked]="isSubmitButtonClicked" [control]="ProductList.controls.price"></mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field>
+            <mat-select placeholder="Brand" formControlName="brand" [(ngModel)]="ManageProduct.brand">
+                <mat-option *ngFor="let tbrand of manageBrand" [value]="tbrand.brand">{{tbrand.brandname}}</mat-option>
+            </mat-select>
+            <mat-error [labelName]="'Brand'" [isSubmitButtonClicked]="isSubmitButtonClicked" [control]="ProductList.controls.brand"></mat-error>
+          </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput placeholder="Details" [(ngModel)]="ManageProduct.details" formControlName="details">
+                <mat-error [labelName]="'Details'" [isSubmitButtonClicked]="isSubmitButtonClicked" [control]="ProductList.controls.details"></mat-error>
+            </mat-form-field>
+        </div>        
+    </div>            
+    <div class="row">
+        <div class="col-lg-12 col-md-6 col-sm-10">
+            <div class="mt-2 mb-2"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 push-md-2">
+            <button type="submit" mat-raised-button class="mat-btn-full mt-1 mb-4" color="primary">Submit</button>
+        </div>
+    </div>   
+</form>
+  
+</section>

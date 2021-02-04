@@ -1,0 +1,94 @@
+.topnav {
+  border-radius: 0;
+  background-color: #00a652;
+  padding: 6px;
+  z-index: 2; }
+  .topnav .text-center {
+    text-align: center;
+    padding-left: 0;
+    cursor: pointer; }
+  .topnav .top-right-nav .buy-now a {
+    color: #999; }
+  .topnav .top-right-nav .dropdown-menu {
+    top: 40px;
+    right: -5px;
+    left: auto; }
+    .topnav .top-right-nav .dropdown-menu .message-preview .media .media-body .media-heading {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 0; }
+    .topnav .top-right-nav .dropdown-menu .message-preview .media .media-body p {
+      margin: 0; }
+    .topnav .top-right-nav .dropdown-menu .message-preview .media .media-body p.last {
+      font-size: 13px;
+      margin-bottom: 0; }
+    .topnav .top-right-nav .dropdown-menu hr {
+      margin-top: 1px;
+      margin-bottom: 4px; }
+
+.messages {
+  width: 300px; }
+  .messages .media {
+    border-bottom: 1px solid #EDEDED;
+    padding: 5px 10px; }
+    .messages .media:last-child {
+      border-bottom: none; }
+  .messages .media-body h5 {
+    font-size: 13px;
+    font-weight: 600; }
+  .messages .media-body .small {
+    margin: 0; }
+  .messages .media-body .last {
+    font-size: 12px;
+    margin: 0; }
+
+.header .navbar {
+  background: #00a652 !important; }
+
+.navbar-inverse .navbar-nav .nav-link {
+  color: white !important; }
+
+.dropdown-menu {
+  font-size: 15px;
+  border-radius: 0rem !important;
+  margin-top: 13px !important;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border: 1px solid #EDEDED;
+  transform: translate(0, 0px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  -webkit-animation: dropdownOpen 0.3s ease-out;
+  -o-animation: dropdownOpen 0.3s ease-out;
+  animation: dropdownOpen 0.3s ease-out; }
+
+.dropdown-item {
+  padding: 3px 1rem !important; }
+
+.navbar-inverse .navbar-nav .nav-link {
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
+.navbar-inverse .navbar-nav .nav-link:after {
+  content: "";
+  border-top: .0em solid;
+  border-right: .0em solid transparent;
+  border-left: 0em solid transparent;
+  margin-left: 0px; }
+
+.navbar-inverse .navbar-nav .nav-link i {
+  float: left;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.8); }
+
+.badge-pill {
+  margin-top: -18px;
+  margin-left: -5px;
+  border: 2px solid #00a652 !important;
+  line-height: 14px;
+  position: absolute;
+  top: 38%;
+  left: 68%; }

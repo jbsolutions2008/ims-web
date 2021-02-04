@@ -1,0 +1,84 @@
+.main-container {
+    margin-top: 20px;
+    // margin-left: 235px;
+    padding: 15px;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    overflow: hidden;
+}
+
+.managesubmit {
+    cursor: pointer;
+}
+
+.table-responsive {
+    display: inline-table;
+}
+
+.pull-right {
+    float: right;
+}
+
+.mat-form-field-infix {
+    color: #fff;
+}
+
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+
+@media screen and (max-width: 992px) {
+    .main-container {
+        margin-left: 0px !important;
+    }
+}
+
+
+/* Structure */
+.example-container {
+    position: relative;
+    min-height: 200px;
+  }
+  
+  .example-table-container {
+    position: relative;
+    max-height: 400px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-rate-limit-reached {
+    color: #980000;
+    max-width: 360px;
+    text-align: center;
+  }
+  
+  /* Column Widths */
+  .mat-column-number{
+    max-width: 64px;
+  }
+  
+  .mat-header-cell {
+    color: rgba(0,0,0,.87);
+    font-weight:bolder;
+}

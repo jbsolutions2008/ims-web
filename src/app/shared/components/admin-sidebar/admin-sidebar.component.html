@@ -1,0 +1,35 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <div class="animated fadeIn sidebar-welcome-admin">
+        <div class="welcome-admin-img align-center mt-4 mt-b">            
+        </div>
+        <h5>Admin Panel</h5>
+    </div>
+    <ul class="list-group">
+        <a routerLink="/admin/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="icon-speedometer icons d-block mb-1"></i>&nbsp;{{ 'Dashboard' }}
+        </a>
+          
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('ManageProduct')">
+                <i class="icon-docs icons d-block mb-1"></i>&nbsp;{{ 'Manage Product' }}
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'ManageProduct'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/admin/manage-product-list']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <span>{{ 'Product List'  }}</span>
+                        </a>                        
+                    </li>
+                    <li>                        
+                        <a [routerLink]="['/admin/add-edit-product']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <span>{{ 'Add Product'  }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>          
+        <a href="jvascript:void(0)" (click)="onLoggedout()" class="list-group-item">
+            <i class="icon-logout icons d-block mb-1"></i> &nbsp;Log Out
+        </a>
+    </ul>
+</nav>

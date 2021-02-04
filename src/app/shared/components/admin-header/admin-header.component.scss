@@ -1,0 +1,127 @@
+$topnav-background-color: #00a652;
+.topnav {
+    border-radius: 0;
+    background-color: $topnav-background-color;
+    padding : 6px;
+    z-index:2;
+    .text-center{
+        text-align: center;
+        padding-left : 0;
+        cursor: pointer;
+    }
+    .top-right-nav{
+        .buy-now{
+            a{
+                color:#999;
+            }
+        }
+        .dropdown-menu{
+            top: 40px;
+            right: -5px;
+            left : auto;
+            .message-preview{
+                .media{
+                    .media-body{
+                        .media-heading{
+                            font-size: 14px;
+                            font-weight: bold;
+                            margin-bottom : 0;
+                        }
+                        p{
+                            margin : 0;
+                        }
+                        p.last{
+                            font-size : 13px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            hr {
+                margin-top: 1px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
+.messages {
+    width: 300px;
+    .media {
+        border-bottom: 1px solid #EDEDED;
+        padding: 5px 10px;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .media-body {
+        h5 {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .small {
+            margin: 0;
+        }
+        .last {
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+}
+
+.header .navbar {
+    background: $topnav-background-color !important;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+    color: rgba(255,255,255,1) !important;
+}
+.dropdown-menu {
+	font-size: 15px;
+	border-radius: 0rem !important;
+	margin-top: 13px !important;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border: 1px solid #EDEDED;
+	transform: translate(0, 0px);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	-webkit-animation: dropdownOpen 0.3s ease-out;
+	-o-animation: dropdownOpen 0.3s ease-out;
+	animation: dropdownOpen 0.3s ease-out;
+}
+
+.dropdown-item {
+	padding: 3px 1rem !important;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+.navbar-inverse .navbar-nav .nav-link:after {
+	content: "";
+	border-top: .0em solid;
+	border-right: .0em solid transparent;
+	border-left: 0em solid transparent;
+	margin-left: 0px;
+}
+
+.navbar-inverse .navbar-nav .nav-link i {
+	float: left;
+	width: 32px;
+	height: 32px;
+	border-radius: 50px;
+	text-align: center;
+	line-height: 28px;
+	border: 1px solid rgba(255,255,255,0.8);
+}
+
+.badge-pill {
+	margin-top: -18px;
+	margin-left: -5px;
+	border: 2px solid #00a652 !important;
+	line-height: 14px;
+	position: absolute;
+	top: 38%;
+	left: 68%;
+}

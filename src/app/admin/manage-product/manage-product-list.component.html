@@ -1,0 +1,123 @@
+<app-admin-header></app-admin-header>
+<app-admin-sidebar></app-admin-sidebar>
+
+<div class="loading-overlay" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+        <!-- <i class="fa fa-times-circle"></i> -->
+</div>
+
+<section class="main-container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/admin/dashboard" [routerLinkActive]="['router-link-active']">Admin Home</a></li>         
+        <li class="breadcrumb-item active">Manage Product</li> 
+    </ol>    
+    <h2>Manage Product
+        <a mat-mini-fab class="mat-mini-fab-sm pull-right" color="primary" [routerLink]="['/admin/add-edit-product']">
+            <mat-icon>add</mat-icon>
+        </a>
+    </h2>
+    <hr>
+
+    <!-- <form>
+    <div class="row">
+        <div class="col-lg-2 col-md-3">
+            <mat-form-field>
+                <mat-select placeholder="Status">
+                    <mat-option>One</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-7">
+            Search
+        </div>
+    </div>
+</form> -->    
+
+    <div class="row">
+        <div class="col-lg-12">           
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-form-field>
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="example-container mat-elevation-z8">
+              
+                <div class="example-table-container">
+              
+                  <table mat-table [dataSource]="productList" class="example-table"
+                         matSort matSortActive="Name" matSortDisableClear matSortDirection="desc">
+                    
+                    <ng-container matColumnDef="Name">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+                    </ng-container>              
+                    
+                    <ng-container matColumnDef="Price">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+                      <td mat-cell *matCellDef="let row">{{row.price}}</td>
+                    </ng-container>
+                                  
+                    <ng-container matColumnDef="Brand">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Brand</th>
+                      <td mat-cell *matCellDef="let row">{{row.brand}}</td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="Details">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Details</th>
+                        <td mat-cell *matCellDef="let row">{{row.details}}</td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="Action">
+                        <th mat-header-cell *matHeaderCellDef>Action</th>
+                        <td mat-cell *matCellDef="let row">                            
+                            <a mat-mini-fab class="mat-mini-fab-sm dp36 mr-2" color="dark" [routerLink]="['/admin/add-edit-product']" [queryParams]="GlobalServices.setQueryString(row._id)">
+                                <mat-icon>mode_edit</mat-icon>
+                            </a>
+                            <a mat-mini-fab class="mat-mini-fab-sm" color="warn" (click)="openDeleteDialog(deleteDialog, row.name, row._id)">
+                                <mat-icon>delete</mat-icon>
+                            </a>
+                        </td>
+                    </ng-container>   
+              
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+                </div>
+              
+                <mat-paginator [length]="resultsLength" [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+
+                <ng-template #deleteDialog let-c="close" let-d="dismiss" layout="row" layout-align="center center">
+                    <div class="modal-header text-right">
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+                        </button>
+                    </div>
+                    <form role="form">
+                        <div class="modal-body text-center">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <p *ngIf="msg" class="text-center text-success font-italic">{{msg}}</p>
+                                    <div class="modal-body text-center" *ngIf="hideDeleteDialog">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-10 col-sm-12 push-lg-2 push-md-1 push-sm-0">
+                                                <p style="font-weight:600;" class="font-italic">Are you sure you want delete <span class="text-primary text-center font-italic mt-1 mb-1">{{proname}}</span> record?</p>
+                                            </div>
+                                            <div class="col-lg-12 col-md-10 col-sm-12 push-lg-2 push-md-1 push-sm-0">
+                                                <button mat-raised-button class="text-upercase" style="width:200px" color="primary" type="button" (click)="deleteProduct(objectid)">Delete</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+                    </form>
+                </ng-template>
+              </div>
+        </div>
+        <!--/.col-->
+    </div>
+</section>
